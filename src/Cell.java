@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 
 public class Cell extends Rectangle {
+<<<<<<< HEAD
   // fields
   int x;
   int y;
@@ -14,9 +15,14 @@ public class Cell extends Rectangle {
     super(inX, inY, size, size);
     x = inX;
     y = inY;
+=======
+  static int size = 35;
+
+  public Cell(int x, int y) {
+    super(x, y, size, size);
+>>>>>>> 0985c5edb34441b608e9fd62d9ed0881c67a58c5
   }
 
-  // methods
   public void paint(Graphics g, Point mousePos) {
     try {
       if (contains(mousePos)) {
@@ -36,6 +42,7 @@ public class Cell extends Rectangle {
     }
   }
 
+<<<<<<< HEAD
   // public boolean contains(Point p) {
   // if (p != null) {
   // return width < p.x && width + size > p.x && height < p.y && height + size >
@@ -44,4 +51,13 @@ public class Cell extends Rectangle {
   // return false;
   // }
   // }
+=======
+  public boolean contains(Point p) {
+    if(p != null) {
+      return super.contains(p);
+    } else {
+      return false;
+    }
+  }
+>>>>>>> 0985c5edb34441b608e9fd62d9ed0881c67a58c5
 }

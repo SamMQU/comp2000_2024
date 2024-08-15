@@ -18,9 +18,22 @@ public class Main extends JFrame {
       setPreferredSize(new Dimension(720, 720));
     }
 
+<<<<<<< HEAD
     @Override
     public void paint(Graphics g) {
       stage.paint(g, getMousePosition());
+=======
+    class Canvas extends JPanel {
+      Stage stage = new Stage();
+      public Canvas() {
+        setPreferredSize(new Dimension(720, 720));
+      }
+
+      @Override
+      public void paint(Graphics g) {
+        stage.paint(g, getMousePosition());
+      }
+>>>>>>> 0985c5edb34441b608e9fd62d9ed0881c67a58c5
     }
   }
 
