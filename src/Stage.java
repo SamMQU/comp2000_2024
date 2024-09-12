@@ -11,10 +11,10 @@ public class Stage {
   List<Cell> cellOverlay;
   Optional<Actor> actorInAction;
 
-  State botMoving;
-  State selectingNewLocation;
-  State choosingActor;
-  State currentState;
+  GameState botMoving;
+  GameState selectingNewLocation;
+  GameState choosingActor;
+  GameState currentState;
 
   public Stage() {
     grid = new Grid();
@@ -29,7 +29,7 @@ public class Stage {
 
   public void paint(Graphics g, Point mouseLoc) {
     // do we have AI moves to make?
-    currentState.makeMoves();
+    currentState.paint(g, mouseLoc);
     grid.paint(g, mouseLoc);
     grid.paintOverlay(g, cellOverlay, new Color(0f, 0f, 1f, 0.5f));
     for (Actor a : actors) {

@@ -1,8 +1,9 @@
+import java.awt.Graphics;
+import java.awt.Point;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
-public class SelectingNewLocationState implements State {
+public class SelectingNewLocationState implements GameState {
     Stage stage;
 
     SelectingNewLocationState(Stage stage) {
@@ -35,14 +36,14 @@ public class SelectingNewLocationState implements State {
         }
     }
 
-    @Override
-    public void makeMoves() {
-        //Nothing
-    }
-
     public String toString()
     {
         return "Selecting New Location";
+    }
+
+    @Override
+    public void paint(Graphics g, Point mouseLoc) {
+        // TODO Auto-generated method stub
     }
 
 }

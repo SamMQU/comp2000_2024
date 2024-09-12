@@ -1,6 +1,8 @@
+import java.awt.Graphics;
+import java.awt.Point;
 import java.util.List;
 
-public class BotMovingState implements State {
+public class BotMovingState implements GameState {
     Stage stage;
 
     BotMovingState(Stage stage) {
@@ -9,11 +11,15 @@ public class BotMovingState implements State {
 
     @Override
     public void mouseClicked(int x, int y) {
-        //Nothing
+        // Nothing
+    }
+
+    public String toString() {
+        return "Bot Moving";
     }
 
     @Override
-    public void makeMoves() {
+    public void paint(Graphics g, Point mouseLoc) {
         for (Actor a : stage.actors) {
             if (!a.isHuman()) {
                 List<Cell> possibleLocs = stage.getClearRadius(a.loc, a.moves);
@@ -25,11 +31,6 @@ public class BotMovingState implements State {
         for (Actor a : stage.actors) {
             a.turns = 1;
         }
-    }
-
-    public String toString()
-    {
-        return "Bot Moving";
     }
 
 }

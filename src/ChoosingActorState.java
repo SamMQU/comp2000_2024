@@ -1,7 +1,9 @@
+import java.awt.Graphics;
+import java.awt.Point;
 import java.util.List;
 import java.util.Optional;
 
-public class ChoosingActorState implements State {
+public class ChoosingActorState implements GameState {
     Stage stage;
 
     ChoosingActorState(Stage stage) {
@@ -20,14 +22,14 @@ public class ChoosingActorState implements State {
         }
     }
 
-    @Override
-    public void makeMoves() {
-        //Nothing
-    }
-
     public String toString()
     {
         return "Choosing Actor";
+    }
+
+    @Override
+    public void paint(Graphics g, Point mouseLoc) {
+        // TODO Auto-generated method stub
     }
 
 }
